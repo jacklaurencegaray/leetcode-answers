@@ -52,11 +52,9 @@ var lengthOfLongestSubstring = function (s) {
  while (end < str.length) {
   const endChar = str[end]
 
-  if (set.has(endChar)) {
-   while (set.has(endChar)) {
-    set.delete(str[start])
-    start++
-   }
+  while (set.has(endChar)) {
+   set.delete(str[start])
+   start++
   }
 
   set.add(endChar)
