@@ -33,7 +33,7 @@ var threeSumClosest = function (nums, target) {
  const sortedNums = nums.sort((a, b) => a - b)
  let closestSum = Number.MIN_SAFE_INTEGER
 
- for (let i = 0; i < nums.length - 2; i++) {
+ for (let i = 0; i < sortedNums.length - 2; i++) {
   for (let left = i + 1, right = sortedNums.length - 1; left < right; ) {
    const currentSum = sortedNums[i] + sortedNums[left] + sortedNums[right]
 
@@ -41,7 +41,7 @@ var threeSumClosest = function (nums, target) {
     return target
    }
 
-   if (target - closestSum > target - currentSum) {
+   if (Math.abs(target - closestSum) > Math.abs(target - currentSum)) {
     closestSum = currentSum
    }
 
