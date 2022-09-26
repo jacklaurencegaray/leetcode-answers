@@ -40,5 +40,7 @@ var fib = function (n) {
  const first = dp[n - 1] ? dp[n - 1] : fib(n - 1)
  const second = dp[n - 2] ? d[n - 2] : fib(n - 2)
 
+ dp[n] = first + second
+
  return first + second
 }
